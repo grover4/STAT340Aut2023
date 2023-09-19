@@ -1,0 +1,64 @@
+---
+title: "Problem Section 1"
+date:  "Monday Oct 2 2023"
+graphics: yes
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+
+* * * 
+
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   -  Describe events of interest using set notation.
+     
+   - Use axioms to calculate probabilities and prove further corollaries.
+  
+   - Back up and support work with relevant explanations
+
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+1. For each of the following experiments, describe the sample space $S$.
+
+    a. Count the number of insect-damaged leaves on a plant.
+	 
+    b. Observe the proportion of defectives in a shipment of $N$ electronic components. 
+	
+
+2. Suppose a person is randomly selected from a large city. Let $A$ be the event that the randomly selected person is male, $B$ the event that the person is under 30 and $C$ that the person speaks French. Write the following verbal description of events using set operations on $A$, $B$, $C$. Venn diagrams might help you to figure out answers to this.  
+
+    a. A male at least 30 years old
+	
+    b. A female under 30 who speaks French
+	
+    c. A male who is either under 30 or speaks French
+
+
+3.  Winthrop, a pre-med student, has been summarily rejected by all 126 US medical schools. Desperate,
+he sends his transcripts and MCATs to the two least selective foreign schools he can think
+of, the two branch campuses (N and E ) of Swampwater Tech. Based on the success his friends have had there,
+he estimates that his probability of being accepted at E is 0.7, and at
+N, 0.4. He also suspects there is a 75% chance that at least one of his applications
+will be rejected. What is the probability that at least one of the schools will accept him?
+
+    Hint: Let $E$ denote the event that he is accepted at the eastern branch and $N$ the event that he is accepted at the Northern branch. You are given $$P(E) = 0.7, P(N) = 0.4, P(E^c \cup N^c) = 0.75.$$ 
+You need to find $P(E \cup N).$
+
+4. Prove that if $E \subset F$, then $P(E) \leq P(F)$.   (Hint: Write $F$ as the union of two mutually exclusive sets $E$ and $F - E$. Then apply axiom 3 )
+
+
+
