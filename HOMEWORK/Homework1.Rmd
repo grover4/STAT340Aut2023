@@ -1,0 +1,47 @@
+---
+title: "Homework 1"
+subtitle: "Autumn 2023"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Oct 11 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. 
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+1. The	crew	of	Apollo	17	consisted	of	two	pilots	and	one	geologist.	Suppose	that	 NASA	had	actually	trained	three	pilots	and	two	geologists.	How	many	possible	Apollo 17 crews	could	have	been	formed	
+
+    a. 	if	the	two	pilot	positions	have	identical	duties?	
+    
+    b. if	there	is	a	pilot	and	a	co-pilot?	
+
+   Write the sample space in each case. You may denote the three pilots as $P_1, P_2, P_3$ and the two geologists as $G_1, G_2$. So $(P_1, P_2, G_1)$ represents the outcome that pilots 1 and 2 and geologist 1 were selected.
+
+
+2.  For two events $A$ and $B$ with $P(A)=0.5$ and $P(B)=0.8$, what are the largest and smallest possible values for $P(A \cap B)$? Be sure to explain each answer.
+
+    *Hint* you will need to use the Bonferroni inequality and also the subset inequality you learned in section.
+
+
+3.  If $P(A) = \frac{1}{3}$ and $P(B^c)=\frac{1}{4}$, can $A$ and $B$ be disjoint? Support your answer.
+
+4.  Three events $A$, $B$ and $C$ are defined in a sample space. Show that 
+$$P(A \cup B \cup C) \leq P(A) + P(B) + P(C).$$ 
+   
+    *Hint* Define $E = B \cup C$ and apply the union bound to $P(A \cup E)$ first. Then apply the union bound again to $P(E)$. 
+    
+ 
