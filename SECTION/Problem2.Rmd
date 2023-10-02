@@ -1,0 +1,115 @@
+---
+title: "Problem Section 2"
+subtitle:  "Mon Oct 9 2023"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+###this is a code chunk. you can write code here
+
+###setting global option to echo all code chunks, unless
+###otherwise specified in chunk options
+knitr::opts_chunk$set(echo = TRUE)
+
+###attach R packages which may be needed
+library(openintro)    #contains R function for drawing probability tree
+
+```
+
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Enumerate and count
+   
+   - Apply Bayes' rule
+   
+   - Calculate probabilities for independent events
+  
+   - Back up and support work with relevant explanations
+
+
+\end{shaded}
+
+* * *
+
+### Exercises 
+
+1.  (*Lady Tasting Tea*) In a famous experiment conducted by Sir. R. A. Fisher, 8 cups of tea - 4 prepared by pouring the milk first and then the tea and 4 prepared by pouring the tea first and then the milk -- were  presented in random order to Muriel Bristol who claimed she could tell the difference. 
+
+The methods employed in the experiment were fully disclosed to the subject and she had to select the 4 cups prepared with the "milk poured first". 
+
+
+```{r teacups, echo=F, fig.align = "center", out.width="85%"}
+#including an image file
+knitr::include_graphics("problem2au23fig1.JPG")
+```
+
+  
+  a. The sample space $S$ for this experiment consists of all groupings of 4 cups selected from eight. How many such groups are there? Write your answer symbolically first and also calculate it in the code chunk below.
+  
+```{r count_s}
+#calculate number of elements in S
+## in the code chunk below
+
+```
+  
+  b. Let $E$ denote the event that there are 3 cups with "milk poured first" and 1 cup with "tea poured first". How many elements are in $E$? Write your answer symbolically first and also calculate it in a code chunk below.
+  
+```{r give_me_a_name}
+#calculate number of elements in E
+
+```
+
+ c. If the lady has no ESP and is just guessing randomly, it is reasonable to assume that every outcome in $S$ is equally likely. Calculate $P(E)$ under this assumption. You may do this in a code chunk.
+
+
+
+2. One common application of conditional probabilities is in calculating inverse probabilities. For example,
+consider the following tree diagram of probabilities relating a screening test for a disease with the actual presence of disease. 
+
+
+```{r treediagram, echo = FALSE}
+
+treeDiag(main = c("Disease status", "Test result"),
+         p1 = c(0.001, 0.999),
+         p2 = list(c(0.98, "?"), c(0.01, "?")),
+         out1 = c("Present", "Absent"),
+         out2 = c("Positive", "Negative"),
+         showSol = FALSE,
+         showWork = FALSE,
+         solwd = 0.5,
+         digits = 6)
+
+```
+
+Let $D$ denote that a randomly selected individual has the disease, and $T$ the event that the screening test is positive. 
+
+The first (primary) branch of the tree gives \emph{unconditional} probabilities of disease being present or absent:
+$$P(D) = 0.001, P(D^{c}) = 0.999$$ 
+while the secondary branches state conditional probabilities of the test coming out positive (or negative) given the disease status. For example, you are given that
+$$P(T|D) = 0.98, P(T|D^{c}) = 0.01.$$
+
+   a. Fill in the values in the tree diagram for the conditional probabilities $P(T^{c}|D)$ and $P(T^{c}|D^{c})$ indicated by a "?"  (Hint: conditional probability follows Law of Complements.)
+
+
+   b. Suppose the test is positive. What is the probability that the person actually has disease? In other words, find the inverse conditional probability: $P(D|T)$
+   
+  Hint: see example 4.2 from "Chapter 4: Conditional Probability" 
+
+ 
+
+
+3. Suppose that string of tree lights you just bought has twenty-four bulbs
+wired in series. If each bulb has a 99.9% chance of “working” when the current
+is applied, what is the probability that the string itself will not work? You may assume that bulb failures are independent.
