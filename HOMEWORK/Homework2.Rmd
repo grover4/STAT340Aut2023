@@ -57,7 +57,7 @@ d.  In this part, we will examine visually how $P(E)$ varies as a function of $N
 
 fishes <- tibble( #data frame
         N = 40:200,    #possible values for N: 40,41, ...,200
-        prob = ___ ) ) #write expression for P(E) in terms of N
+        prob = ___ )  #write expression for P(E) in terms of N
 
 ggplot(data = fishes,             
        mapping = aes(x = ___,        #x and y variables
