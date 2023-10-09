@@ -1,0 +1,89 @@
+---
+title: "Homework 2"
+subtitle: "Autumn 2023"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Oct 18 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. 
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+
+1. Suppose 12 coins are tossed and the outcome (head or tail) is recorded for each.  
+   
+a. The sample space $S$ corresponding to this "experiment" consists of all possible sequences of heads and tails that result from tossing 12 coins. How many elements are in $S$? Calculate this number in a code chunk, report the answer using inline code and also explain your answer very briefly. 
+
+    *Hint: Refer to Braille alphabet example 3.2. This problem is similar but with a 12 dot matrix.*
+   
+b. Let $E$ denote the event that 7 of the 12 coins land on heads. How many elements are in $E$? Calculate this number in a code chunk, report the answer using inline code and also explain your answer very briefly. 
+    
+    *Hint: Referring to the Braille alphabet example again, suppose we now want to count all the letters we could form with 3 raised dots. All you need to do is decide which three of the six dots will be raised. How many ways can you make this decision?*
+   
+c. Calculate $P(E)$ assuming all the elements in $S$ are equally likely. Report your final answer in a sentence using inline code.
+   
+   
+2. To estimate the number $N$ of goldfish in a pond, $r=25$ fish were caught, tagged and released. Later, a second sample of $n=20$ fish were caught and 5 fish in this sample were noted to be tagged.  
+ 
+a.  How many possible samples of size $n=20$ can be formed from the $N$ fish in the pond?  (Leave your answer in terms of a binomial coefficient - you cannot calculate it because you don't know $N$)
+    
+b. The event $E$ contains all the samples which have 5 tagged and 15 untagged fish. How many elements are in the event $E$? (Leave your answer in terms of $N$)
+   
+c. Assuming each possible sample is equally likely, give an expression for $P(E)$. (Leave your answer in terms of $N$)
+
+d.  In this part, we will examine visually how $P(E)$ varies as a function of $N$.  Fill in the blanks in the R code provided and run it in R to create the plot. You should remove the `eval = FALSE` chunk option before knitting.   (Note: You DO NOT need to know **tidyverse** or the **ggplot** function to answer this question)
+
+
+```{r fish, eval=FALSE}
+
+fishes <- tibble( #data frame
+        N = 40:200,    #possible values for N: 40,41, ...,200
+        prob = ___ ) ) #write expression for P(E) in terms of N
+
+ggplot(data = fishes,             
+       mapping = aes(x = ___,        #x and y variables
+                     y = ___) ) +
+           geom_line() +            #type of plot to draw
+             labs( title = " ___" , #labels for plot
+                  x = "___", 
+                  y = "___")
+```
+ 
+    
+3. Among all students seeking treatment at Hall Health, 0.5% are eventually diagnosed as having mononucleosis (event $A$). Of those who do have mono, 90% complain of a sore throat (event $B$). But 30% of those not having mono also have sore throats. 
+
+a. Make a tree diagram of the probabilities relating presenting with a sore throat and a diagnosis of mononucleosis. Read the notes below:
+   - Don't forget to include the **openintro** package in the setup chunk
+   - Create a new code chunk, give it a name. Then see problem 2a in `Problem2.Rmd` for the code to create the tree and add that to your code chunk with the numbers appropriately changed.
+
+    
+b. If a student comes to Hall Health and says that she has a sore throat, what is the probability that she has mono? Report your answer rounded to 4 decimal places, using inline code. Be sure to show your steps carefully.  (Hint: please see problem 2b in `Problem2.Rmd` for help, We will deduct points for not defining events and carefully showing your work step by step. )
+
+4. If $A$ and $B$ are independent events, then the following pairs are also independent. 
+
+a. $A$ and $B^c$
+
+b. $A^c$ and $B$
+
+c. $A^c$ and $B^c$.
+
+   Prove result c. only. Show your work carefully with justification.
