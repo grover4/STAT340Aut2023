@@ -1,0 +1,94 @@
+---
+title: "Problem Section 3"
+subtitle:  "Mon Oct 16, 2023"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Identifying the range of discrete and continuous random variables
+   
+   - Deriving the PMF and CDF of a discrete random variable
+   
+   - Recognizing properties of CDFs
+   
+   - Back up and support work with relevant explanations
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+
+1. For each situation, give the range of the random variable $X$. Then state whether the random variable is discrete or continuous.
+
+a. Three fair coins are tossed independently until they show the same side. $X$ is the number of tosses needed.
+
+b. Using modern aptitude testing and screening procedures, Rote Industries has greatly reduced its employee turnover. Recent records show that 90% of the company’s new assembly line workers stay with the company for at least a year. $X$ is the number of employees among 12 recently hired that will still be with the company in another year.
+		
+c. In a busy 24 hour copy center, minor malfunctions of the copy machine occur randomly. $X$ denotes the time (in hours) until the first minor malfunction occurs.
+	 
+2. Suppose you toss a fair coin 3 times. The sample space for this experiment is shown below:
+$$S = \{ HHH, HHT, HTH, HTT, TTT,TTH, THT, THH \}.$$
+
+a. Write the PMF of $X$ defined as the difference between number of heads and number of tails.
+
+b. Give the CDF of $X$.
+
+c. Draw the probability histogram of $X$ in R.
+
+	  
+3. Which of the following is a valid CDF? (choose one; also point out what's wrong with the ones you didn't choose)
+
+a. 
+\begin{align*} 
+        F(x) &= \left\{ \begin{array}{cc} 
+                 0 & x < 0\\
+                 \frac{1}{4} & 0 \leq x \leq 3 \\
+                 \frac{3}{4} & 3 <  x < 5 \\
+                 1 & 5 \leq x \end{array} \right. \end{align*}
+
+b.
+\begin{align*} 
+        F(x) &= \left\{ \begin{array}{cc} 
+                 0 & x < 0\\
+                 \frac{1}{4} & 0 \leq x < 3 \\
+                 \frac{3}{4} & 3 \leq x < 5 \\
+                 1 & 5 \leq x \end{array} \right. \end{align*}
+
+c. 
+\begin{align*} 
+      F(x) &= \left\{ \begin{array}{cc} 
+                 0 & x < 0\\
+                 \frac{3}{4} & 0 \leq x < 3 \\
+                 \frac{1}{4} & 3 \leq x < 5 \\
+                 1 & 5 \leq x \end{array} \right. \end{align*}
+   
+
+d.
+\begin{align*} 
+       F(x) &= \left\{ \begin{array}{cc} 
+                 0 & x < 0\\
+                 \frac{1}{4} & 0 \leq x < 3 \\
+                 \frac{3}{4} & 3 \leq x < 5 \\
+                 \frac{7}{8} & 5 \leq x \end{array}   
+                 \right.                      
+\end{align*}              
