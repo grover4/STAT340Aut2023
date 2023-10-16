@@ -1,0 +1,97 @@
+---
+title: "Homework 3"
+subtitle: "Autumn 2023"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+
+\onehalfspacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Oct 25 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. 
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+
+1. 
+
+a. (Shelley) Below are the last five lines of Shelley's poem *Ozymandias* 
+
+   ```{verbatim}
+   "My name is Ozymandias, king of kings:
+    Look on my works, ye Mighty, and despair!"
+    Nothing beside remains. Round the decay
+    Of that colossal wreck, boundless and bare
+    The lone and level sands stretch far away 
+   ```
+
+   Let $X$ denote the length of a word which is randomly selected from those lines. What is $X(\text{boundless})$?  Write the range of $X$. Is $X$ a discrete or continuous random variable? Explain briefly.
+
+b. (Free throws) As part of the warm up drill, each player on a basketball team is required to shoot free throws until a basket is made. If Amy has a 80% success rate at the foul line, write the PMF of the random variable $X$ that describes the number of misses before she completes the drill. Assume that individual throws constitute independent events.
+
+   Write the PMF of $X$ as a formula first, and then write a brief explanation below.
+   
+   \begin{align*}
+   f(x) &=    
+   \end{align*}
+   
+   
+   
+2. (Random walk) Suppose a particle moves 4 steps along the x-axis, starting at 0. At each step, it moves one unit to the right or to the left. 
+
+a. Each possible outcome of this experiment is an ordered quadruple. For example, the outcome $(L, L, L, L)$ represents the case when the particle moves one unit to the left at each of the four steps to end up at $x=-4$. The outcome $(R, L, R, L)$ represents the case when the particle first moves one unit to the right, then one unit back to the left and so on ending up at $x=0$. 
+
+   What is the size of this sample space? How many elements? Explain your answer very briefly. 
+
+b. Let $E$ denote the event that the particle ends up at $x = 0$. Write the outcomes in $E$ and calculate $P(E)$ assuming every outcome is equally likely to occur. 
+
+c. Now suppose the random variable $X$ denotes the position of the particle after 4 steps. Write its PMF in a tabular format. I have created a partial table for you to fill in. Each row should contain a possible value $x$, then list the outcomes from the original sample space that give that possible value and the probability. (*Hint: in part b you calculated $P(X = 0)$.*)
+
+\begin{table}[h]
+\centering
+\caption{PMF of $X$: position of particle after 4 steps}
+\begin{tabular}{|c|p{4in}|r|} \hline
+$x$ &  outcomes from $S$ & $f(x)$ \\ \hline 
+\end{tabular}
+\end{table}
+
+d. Draw the probability histogram of $X$, the position of the particle after 4 steps. (Don't forget to attach the `tidyverse`package in the setup chunk.)
+
+3. (Random walk revisited)
+
+a. How would the PMF change in problem 2c change if the particle was twice as likely to move to the right as it is to the left? That is, the outcomes are no longer equally likely. Create a table showing the new PMF. Also clearly state any assumption you now need to make in order to re-calculate the probabilities. 
+
+b. Draw the probability histogram of $X$, the position of the particle after 4 steps in this scenario.
+
+4. Suppose $X$ is a discrete uniform random variable on the integers $1, 2,\dots, n$, that is, it has PMF
+
+$$f_{X}(x) = P(X = x) = k, \ \ \ x = 1,2,\dots,n$$
+
+where $k$ is some unknown number. 
+
+a. Find $k$
+
+b. Define the random variable $$Y = -X$$. What is the range of $Y$? What are the probabilities associated with these values?
+
