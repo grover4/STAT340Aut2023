@@ -1,0 +1,77 @@
+---
+title: "Problem Section 4"
+subtitle:  "Mon Oct 23, 2023"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Identify whether the conditions for a binomial experiment are satisfied.
+     
+   - Calculate binomial probabilities
+   
+   - Calculate expected value
+  
+   - Back up and support work with relevant explanations
+
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+1. A multiple choice test has 20 questions, each with four answers. 
+Suppose a student randomly guesses the answer to each question. Let the random variable $X$ denote the number of questions they guess correctly. 
+  
+  a. What is the distribution of $X$? State the name of the distribution and also the values of its parameters. Be sure to state (in context) any assumptions you need to make.
+  
+  b. Give an expression for the probability that they will correctly guess 12 questions. Then write the R function for calculating this probability. 
+  
+  c. How many questions should they *expect* to guess correctly?
+  
+  d. Give an expression for the probability that they will correctly guess fewer questions than expected. Then write the R function for calculating this probability. 
+
+ 
+
+2. A box contains n chips numbered 1 through n. Let $X$ denote the number on a randomly selected chip from the box. Assume that the PMF of $X$ is given by
+$$f(x) = P(X = x) = k \cdot x, \ \ \ x = 1,2,\dots,n$$
+where $k$ is some unknown number. 
+
+a. What is $k$?  
+
+   Hints: The probabilities must sum to 1. Also the sum of the first $n$ integers is $n(n+1)/2$
+
+b. Find $E\left[X \right]$, the expected value of $X$. 
+
+   Hint: you will need to use the fact that the sum of the squares of the first $n$ integers is $n(n+1)(2n+1)/6$ in order to simplify the expression.
+
+
+3. Weird Wally offers you the following choice. You may have a flat amount of $\frac{1}{3.5}$ dollars or you may roll a fair die and he will give you $\frac{1}{X}$ dollars where $X$ is the value on the roll. 
+The PMF of $X$ is shown in the table below.
+
+\begin{tabular}{c|c|c|c|c|c|c} \hline
+$x$ & 1& 2 & 3 &4 & 5& 6 \\ \hline
+$f(x)$& $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ &$\frac{1}{6}$ &$\frac{1}{6}$ &$\frac{1}{6}$ \\ \hline
+\end{tabular}
+
+Which is the better deal? Calculate $E\left[ \frac{1}{X} \right]$ to decide.  (Hint: use the law of the unconscious probabilist - Lemma 7.3)
+
+
