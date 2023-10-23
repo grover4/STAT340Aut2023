@@ -1,0 +1,76 @@
+---
+title: "Problem Section 5"
+subtitle:  "Mon Oct 30, 2023"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Calculate expected value and variance using the PMF
+     
+   - Use Chebychev's inequality to make probability statements
+   
+   - Use the geometric series to calculate probabilities
+  
+   - Back up and support work with relevant explanations
+
+ 
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+1. (Mean and variance) 
+
+a. Suppose a random variable $X$ has PMF as shown below. Find $E\left[X \right]$. Also calculate $Var\left[X \right]$.
+
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|} \hline
+      $x$ & -\$5 & \$170 \\ \hline 
+      $f(x)$ & 37/38  & 1/38  \\ \hline
+    \end{tabular}
+    \end{table}
+
+b. Suppose $X \sim Binom(n = 10, \pi = \frac{2}{3})$. What is the expected value of $Y = 3X - 4$?
+
+c. If $X$ denotes a temperature of a randomly selected day recorded in degrees Fahrenheit, then $Y = \frac{5}{9} X - \frac{160}{9}$ is the corresponding temperature in degrees Celsius. If the standard deviation for $X$ is 15.7$^{\circ} F$, what is the standard deviation of $Y$?
+
+    
+2. (Chebychev) Suppose $X$ is a random variable with mean and variance both equal to 20. What can be said about $P( 0 <  X < 40)$?
+
+    Hint: Chebychev's inequality says that 
+    $$P(|X - 20| > k \sqrt{20} ) \leq \frac{1}{k^2}.$$ What would you choose for $k$ here so you can say something about $P(0 < X < 40)$?
+   
+   
+3. (Suppose we wish to generate $X \sim Binom(n=10, \pi=\frac{2}{3})$ subject to the constraint $X \leq 3$. Say we use the following naive algorithm to accomplish this task:
+
+    - Generate an $x$ from a $Binom(10, \frac{2}{3})$
+  
+    - Accept the value $x$ if $x <= 3$. Otherwise reject it.
+  
+a. Calculate the acceptance probability. That is, what is the probability we will accept a value $x$ that is generated?
+
+b. Define a new random variable $Y$ as the number of times we have to generate a binomial variable before we find an acceptable one. For example, if on our first try, we get $x = 2$, then $y=0$. What is the distribution of $Y$? Be sure to state the distribution with the parameter specified.
+
+c. How many $x$'s should you expect to reject? That is, what is $E\left[Y \right]$? Write the R function for calculating the probability that $Y$ is larger than expected.
+
