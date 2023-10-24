@@ -1,0 +1,177 @@
+---
+title: "Problem Section 4"
+subtitle:  "Mon Oct 23, 2023"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Identify whether the conditions for a binomial experiment are satisfied.
+     
+   - Calculate binomial probabilities
+   
+   - Calculate expected value
+  
+   - Back up and support work with relevant explanations
+
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+1. A multiple choice test has 20 questions, each with four answers. 
+Suppose a student randomly guesses the answer to each question. Let the random variable $X$ denote the number of questions they guess correctly. 
+  
+  a. What is the distribution of $X$? State the name of the distribution and also the values of its parameters. Be sure to state (in context) any assumptions you need to make.
+  
+We can think of each question as a trial in a binomial experiment. The four conditions for this scenario to be modeled as a binomial experiment are satisified: there is a fixed number of trials, each trial has two outcomes (correct answer/wrong answer), and the probability of a correct answer is the same for each trial. If we are willing to assume that the trials are independent -- meaning that whether we guess correctly on one question has no impact on another -- then all four conditions of a binomial experiment are met. This may be not a reasonable assumption if the students get instant feedback. Knowing they answered something incorrectly, may result in them getting flustered and botching the next question. 
+
+Under the assumptions of the binomial experiment, the random variable $X$ will then a $Binom(n= 20, \pi = \frac{1}{4})$ distribution. 
+  
+  b. Give an expression for the probability that they will correctly guess 12 questions. Then write the R function for calculating this probability. 
+  
+Recall, if $X \sim Binom(n, \pi)$, then the PMF of X is
+
+$$f(x) = P(X=x) = \binom{n}{x} \pi^x (1-\pi)^{n-x}$$
+  
+Therefore, plugging in $n=20$, $x=12$, $\pi = \frac{1}{4}$,
+
+$$f(12) = P(X=12) = \binom{20}{12} \left( \frac{1}{4} \right)^{12} \left( \frac{3}{4} \right)^{8}$$
+which can be calculated in R:
+
+```{r problem1b}
+dbinom(x=12, size = 20, prob = 1/4) #P(X=12)
+```
+  
+  c. How many questions should they *expect* to guess correctly?
+  
+If $X \sim Binom(n, \pi)$, then its expected value is $E[X] = n \pi$. Therefore, this student should expect to guess $20 \times \frac{1}{4} =$ `r round(20/4,2)` questions correctly.
+
+This means that if they repeatedly takes this test, on average they will get `r round(20/4,2)` question right. 
+  
+  d. Give an expression for the probability that they will correctly guess fewer questions than expected. Then write the R function for calculating this probability. 
+
+Recall that $E[X] = \frac{20}{4} = 5$. 
+
+Here we want to calculate:
+
+
+\begin{align*}
+P(X < 5) 
+&=P(X \leq 4) \\
+&= P(X=0) + P(X=1) + P(X=2) + P(X=3) + P(X=4)\\
+&= \sum\limits_{x=0}^{4} P(X=x) \\ 
+&= \sum_{x=0}^{4} \binom{20}{x} \left( \frac{1}{4} \right)^x \left( \frac{3}{4}\right)^{20-x}
+\end{align*}
+ 
+
+```{r}
+pbinom(q = 4, size = 20, prob = 1/4) #P(X <= 4)
+```
+
+
+2. A box contains n chips numbered 1 through n. Let $X$ denote the number on a randomly selected chip from the box. Assume that the PMF of $X$ is given by
+$$f(x) = P(X = x) = k \cdot x, \ \ \ x = 1,2,\dots,n$$
+where $k$ is some unknown number. 
+
+a. What is $k$?  
+
+   Hints: The probabilities must sum to 1. Also the sum of the first $n$ integers is $n(n+1)/2$
+   
+   We know that for any probilitity distirbution f(x), for a discrete RV X, we must have: $\sum_{x} f(x) = 1$. We'll use this property to solve for k. 
+   
+   
+Solving without summation notation:
+
+
+\begin{align*}
+f(1) + f(2) + \dots + f(n)&= 1 \\
+1k + 2k + \dots + nk &= 1 \\
+k(1 + 2 + \dots + n) &= 1 \\
+k \frac{n(n+1)}{2} &= 1 \tag*{sum of first n integers} \\
+k&= \frac{2}{n(n+1)}
+\end{align*}
+  
+Solving with summation notation:
+
+
+\begin{align*}
+\sum_x f(x) &= 1 \\
+\sum_x kx &= 1\\
+k \sum_x x &= 1\\
+k \frac{n(n+1)}{2} &= 1 \tag*{sum of first n integers} \\
+k&= \frac{2}{n(n+1)}
+\end{align*}
+
+   
+
+b. Find $E\left[X \right]$, the expected value of $X$. 
+
+   Hint: you will need to use the fact that the sum of the squares of the first $n$ integers is $n(n+1)(2n+1)/6$ in order to simplify the expression.
+
+
+\begin{align*}
+E[X] &= \sum_x x f(x) \\
+&= \sum_x x kx \\
+&= \sum_x kx^2\\
+&= k \sum_x x^2 \\
+&= k \frac{n(n+1)(2n+1)}{6} \tag*{sum of squares of first n integers}\\
+&= \frac{1}{3(2n+1)} \tag*{plug in k from part a}
+\end{align*}
+
+
+So $E[X] = \frac{1}{3(2n+1)}$. 
+
+
+3. Weird Wally offers you the following choice. You may have a flat amount of $\frac{1}{3.5}$ dollars or you may roll a fair die and he will give you $\frac{1}{X}$ dollars where $X$ is the value on the roll. 
+The PMF of $X$ is shown in the table below.
+
+
+\begin{tabular}{c|c|c|c|c|c|c} \hline
+$x$ & 1& 2 & 3 &4 & 5& 6 \\ \hline
+$f(x)$& $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ &$\frac{1}{6}$ &$\frac{1}{6}$ &$\frac{1}{6}$ \\ \hline
+\end{tabular}
+
+
+Which is the better deal? Calculate $E\left[ \frac{1}{X} \right]$ to decide.  (Hint: use the law of the unconscious probabilist - Lemma 7.3)
+
+Law of Unconscious Probabilist: $E[g(x)] = \sum_x g(x) f(x)$. In our case, $g(x) = \frac{1}{x}$.
+
+We can find $E \left[\frac{1}{X} \right]$ as follows using the law of the unconscious probabilist:
+
+
+\begin{align*}
+E \left[\frac{1}{X} \right] 
+&= \sum_x \frac{1}{x} f(x) \\
+&= \sum_x \frac{1}{x} \frac{1}{6} \\
+&= \frac{1}{6} \sum_x \frac{1}{x} 
+\end{align*}
+
+
+We'll calculate this using R. 
+
+```{r}
+inv_x <- 1/(1:6)
+E_1_x <- sum(inv_x)/6
+E_1_x
+```
+Using R, we see that $E \left[\frac{1}{X} \right] = `r E_1_x`$ versus Wally's offer of `r 1/3.5`. Thus rolling the die has a better expecteed value and so its the better deal. 
