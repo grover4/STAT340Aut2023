@@ -70,12 +70,11 @@ b. Give an expression for $E\left[X \right]$. Show your steps beginning with the
 
 c. Make a plot of $E\left[X \right]$ versus $\pi$. Does the graph make sense intuitively? Explain briefly. (You can use the `geom_function` layer as we did to graph the variance of a Bernoulli random variable in Example 7.7)
 
-d. Find the standard deviation of $X$ and interpret the number.
 
 
 3. (Chebychev) Suppose $X \sim Binom(n, \frac{1}{2})$. 
 
-   a. What is the mean $\mu$ and standard deviation $\sigma$ of $X$? Just cite results and use them.
+   a. What is the mean $\mu$ and standard deviation $\sigma$ of $X$? Just cite results and use them. (See Chapters 7.1 and 7.2 for these results )
    
    b. Use Chebyshev's inequality to find the smallest $n$ in order for 
     $$P \left(0.9 \times \frac{n}{2} < X < 1.1 \times \frac{n}{2} \right)$$ 
