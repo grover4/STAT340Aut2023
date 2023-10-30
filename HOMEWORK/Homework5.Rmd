@@ -1,0 +1,124 @@
+---
+title: "Homework 5"
+subtitle: "Autumn 2023"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+
+\onehalfspacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+```
+
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Nov 8 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. 
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+
+1. (Gambling) Independent tosses of a fair coin are made until a head appears. Let the random variable $X$ denote the number of tails before the first head appears. 
+
+a. Write the PMF of $X$.
+
+b. You will be given $Y = \left(\frac{1}{2} \right)^{X}$ dollars. How much money should you expect to get paid? Please show your steps. Cite any rules you use.
+
+    *Hint* Find $E\left[Y \right]$
+    
+
+2. (Blood type) In the US population, 85% have an agglutinating factor in their blood classifying them as Rh positive, while 15% lack the factor and are Rh negative. A medical researcher wants to analyze blood from a newborn Rh negative infant, so she examines the blood types of successive newborn infants until she finds an Rh negative infant. 
+
+
+a. Let the random variable $X$ denote the number of Rh positive infants she needs to type before she finds the first positive case. Write the distribution of $X$. Be sure to state the values of any parameters. List the assumptions you need to make to answer this question.
+
+b. How many Rh positive infants should she expect to type before she finds her first Rh negative? State the formula you are using and then report your answer in a complete sentence.
+
+c. What is the probability that she will type more Rh positive infants than expected? Give the expression for this probability here, do not calculate it yet. 
+
+     *Hint* see slide 8 from Chapter 8.1
+
+d. Calculate the probability from part c using a built in R function for working with the distribution from part a. Be sure to echo your code chunk and report your answer (rounded to 4 decimal places) using inline code.  
+   
+3. (Memoryless) Let $X$ be a geometric random variable with probability $\pi$. That is,
+$$f(x) = \pi \cdot (1 - \pi)^{x}, \ \ x = 0, 1, 2 \dots$$ 
+
+a. Let $k$ be some non-negative integer. Derive the expression $P(X \geq k)$. Be sure to show your steps.     
+
+    *Hint*: We did this in class with $k=19$ in Example 8.2 from Chapter 8.1. I want you to derive the steps again for generic $k$.
+
+b. Show that for all non-negative integers  $x$ and $k$,
+$$P(X \geq k + x | X \geq k) = P(X \geq x).$$
+
+c. Because of the result in part b, we say that the geometric distribution is a \emph{memoryless} distribution. Explain how this is an appropriate name for this property.
+
+4. (Apple trees) From each of 6 trees in an apple orchard, 25 leaves are selected. On each of the leaves, the number of adult mites are counted. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|ccccccccc} \hline
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8+ \\
+count & 70 & 38 & 17 & 10 & 9 & 3 & 2 & 1 & 0 \\ \hline
+\end{tabular}
+\end{table}
+
+The dataset can be created in R as shown below. Type `?rep` for help if you want to know what it does. 
+
+```{r create-apple-data}
+
+apple_trees<-tibble(
+         mites=rep(0:7,
+                    times=c(70,38,17,10,9,3,2,1) ))
+
+##On your own, run this code chunk by clicking 
+##the green arrow and look ##at the dataset 
+##you have created by clicking on it in the 
+##Environment. Then try glimpse, slice_head, 
+##count in the Console like we did with the 
+##Fumbles data in Chapter 8.2. 
+##Nothing to turn in, just for fun.
+
+```
+
+a. Write code in the code chunk below to print the number of observations (leaves) in the data set along with the mean and standard deviation of the `mites` variable. (See sample code in Example 8.6 from Chapter 8.2; you will need to modify it for this context) 
+
+```{r problem4a}
+
+
+```
+
+b. Let $X$ denote the number of mites on a randomly selected leaf. In this question, you will consider two possible models for $X$:
+
+ - $X \sim Pois(lambda = \bar{x})$ 
+    
+ - $X \sim Geom( prob = \frac{1}{1 + \bar{x}} )$
+ 
+    where $\bar{x}$ is the number you calculated from part a. for the mean. 
+  
+    Write code in the code chunk below to make side-by-side plots  showing how well each model fits. Each plot must have the histogram of the data with the probabilities according to the model overlaid on it. Just by eyeballing, which model appears to fit the data better? 
+
+   *Hint*: For help with the code for side-by-side plots, look at slide 11 from the slidedeck Chapter 8.1. You will obviously need to modify this code for this example. For help with overlaying theoretical probabilities on a histogram, look at slide 26 from the slidedeck Chapter 8.2.
+
+```{r problem4b}
+#add patchwork package in setup code chunk
+
+
+```
