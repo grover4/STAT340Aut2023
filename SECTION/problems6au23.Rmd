@@ -1,0 +1,56 @@
+---
+title: "Problem Section 6"
+subtitle:  "Mon Nov 6, 2023"
+graphics: yes
+output: 
+        pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+* * * 
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence.
+The specific tasks include: 
+
+   - Use the Poisson and hypergeometric models to calculate probabilities
+   
+   - Compare binomial probabilities with their Poisson approximation
+   
+   - Use the `uniroot` function to solve a non-linear equation
+  
+   - Back up and support work with relevant explanations
+
+ 
+
+\end{shaded}
+
+
+* * *
+
+### Exercises 
+
+1.  Suppose telephone calls arrive at a help line at the rate of two per minute. A Poisson process is assumed to provide a good model for the arrivals. For each question below, write the probability you wish to calculate mathematically, then use built-in functions in R to do the calculation.
+
+a. Calculate the probability that exactly five calls will arrive in the next 2 minutes.
+
+b. Calculate the probability that exactly five calls will arrive in the next 2 minutes and then five more calls will arrive in the following two minutes.
+
+c. Calculate the probability that the next twenty five calls will occur within 10 minutes of each other.
+
+2. Suppose $X \sim Pois(\lambda)$. Find $P(X=x|X \geq 1)$ for $x=0,1,2,\dots$. Write your steps clearly, beginning with the PMF of a Poisson. 
+
+    *Hint*: Try calculating this probability for specific values of $x$, such as $x=0$, $x=1$, $x=2$. You will understand the pattern better that way.
+
+3. Suppose $X$, the number of chocolate chips in a certain type of cookie has a Poisson distribution. We want the probability that a randomly chosen cookie has at least 2 chocolate chips to be greater than 0.99. Find the smallest value of the mean of this distribution that ensures this probability.
+
+   *Note* The equation will be non-linear in $\lambda$ and can only be solved numerically. For your part, just set up the equation which needs to be solved. You will learn how to use `uniroot` to find the $\lambda$ in section. 
