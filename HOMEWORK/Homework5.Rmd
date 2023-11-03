@@ -48,7 +48,7 @@ b. You will be given $Y = \left(\frac{1}{2} \right)^{X}$ dollars. How much money
 2. (Blood type) In the US population, 85% have an agglutinating factor in their blood classifying them as Rh positive, while 15% lack the factor and are Rh negative. A medical researcher wants to analyze blood from a newborn Rh negative infant, so she examines the blood types of successive newborn infants until she finds an Rh negative infant. 
 
 
-a. Let the random variable $X$ denote the number of Rh positive infants she needs to type before she finds the first positive case. Write the distribution of $X$. Be sure to state the values of any parameters. List the assumptions you need to make to answer this question.
+a. Let the random variable $X$ denote the number of Rh positive infants she needs to type before she finds the first negative case. Write the distribution of $X$. Be sure to state the values of any parameters. List the assumptions you need to make to answer this question.
 
 b. How many Rh positive infants should she expect to type before she finds her first Rh negative? State the formula you are using and then report your answer in a complete sentence.
 
