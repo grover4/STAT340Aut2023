@@ -45,7 +45,7 @@ a. What probability distribution might provide a reasonable model for the random
    
    - state any assumption you need to make 
 
-b. Using your model in part a, calculate $P(X < 100)$, the probability that fewer than 100 aphids survive. Be sure to do your calculation in a code chunk and then report the answer (rounded to four decimal places) in a complete sentence using inline code.
+b. Using your model in part a, calculate $P(X < 10)$, the probability that fewer than 100 aphids survive. Be sure to do your calculation in a code chunk and then report the answer (rounded to four decimal places) in a complete sentence using inline code.
 
 
 c. What other probability distribution might be computationally more convenient and would provide a good approximation for the probability in part b? Be sure to state the values for the parameters of the distribution.
