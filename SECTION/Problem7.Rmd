@@ -40,7 +40,7 @@ The specific tasks include:
 ### Exercises 
 
 
-1. The distribution of age at death of a large population is shown as a density histogram below. The density of each bin (reported as percentages) is given in parentheses above the block. For example, the density of the bin 0-20 is 2.5% or 0.025. 
+1. The distribution of age at death of a large population is shown as a density histogram below. The density of each bin (reported as percentages) is given in parentheses above the block. For example, the density of the bin 70-80 is 2.5% or 0.025. 
    
    Find the density of the 40 - 50 bin. 
 
