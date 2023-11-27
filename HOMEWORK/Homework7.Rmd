@@ -1,0 +1,92 @@
+---
+title: "Homework 7"
+subtitle: "Autumn 2023"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+
+\onehalfspacing
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+```
+
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Dec 6 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. \textbf{No work will be accepted after this time.}
+
+- Please answer the following questions in the order in which they are posed. \textbf{In the interest of time, problems 3 and 4 may be handwritten. However, keep in mind that you must upload a clearly legible scan and we will take off credit for untidy work that we are unable to read.}
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+1. Suppose the duration of a phone call (in minutes), $X$, can be described probabilistically by the equation
+
+	 $$P(X > x) = \frac{1}{2} e^{-x} + \frac{1}{2} e^{- \frac{x}{5}}, \ 0 \leq x < \infty$$
+	   
+   	
+a. Write the CDF of $X$ by filling in the question marks in align environment below. (No explanation needed)
+
+   \begin{align*}
+   F(x) &= P(X \leq x) \\
+   &= \left\{ \begin{array}{cc} 
+                   ??? & x < 0\\
+                   ??? & x \geq 0.
+              \end{array} \right.
+    \end{align*}
+    
+b. Find a PDF, $f(x)$  for $x$. Show your work mathematically. 
+
+c. Find the probability that the call will last between 3 and 5 minutes. In other words, find $P(3 \leq X < 5)$. Show your steps mathematically first. Calculations may then be done in a code chunk and the answer should be reported using inline code.
+
+    *Hint:* You can just plug into the CDF and avoid integrations.
+   
+d. Find the median length of a phone call (in mins). Show what you are calculating mathematically first. Calculations may then be done in a code chunk and the answer should be reported using inline code.
+
+    *Hint:* You want to find $q$ so that $P(X \leq q) = F(q) = 0.5$. You will need to use `uniroot` to solve this equation to find the value of $q$. You might want to look at a graph in order to set the `upper` argument of the function `uniroot`. No need to include the graph.
+
+   
+2. The following ordered set of 27 P-values (from Kaati et al., Eur. J. Hum Genetics 2007) were the result of testing a hypothesis using many independent subgroups of a sample. 
+
+    ```{r pvalues}
+pvalue_df <- data.frame( 
+  pval = c(0.01, 0.01, 0.02, 0.04, 0.04, 0.05, 0.07, 0.07, 0.10, 0.19, 0.24, 0.27, 0.34,
+0.37, 0.44, 0.50, 0.53, 0.54, 0.55, 0.61, 0.70, 0.77, 0.80, 0.80, 0.82, 0.94, 0.99)
+)
+    ```
+
+    If the hypothesis being tested is true, then the P-values all come from a uniform distribution on $[0,1)$. Fit a uniform distribution to these data. What do you conclude about the hypothesis being tested?
+
+    Hints: Please see slide 15 from Chapter 10 for sample code. Also when using the `breaks` argument, set the witdth of the bins to 1/6 for uniformity of grading.
+     
+3. A tool-and-die company makes castings for steel stress-monitoring gauges. Their annual profit $Q$ is a function of demand $X$, given by 
+    $$t(X) = 1 - exp (-2 X).$$
+   
+   Suppose the demand $X$ has the PDF
+    $$f(x) = 6 e^{-6x} \ \ \  0 \leq x$$
+  
+   Find $E\left[ t(X) \right]$. State any rules you use and show your work clearly. 
+    
+4. The diameters (in mm) of ball bearings from a particular company are normally distributed. In order to quickly determine the parameters of the normal distribution, one determines the proportion of ball bearings going through sieves with circular holes of different sizes. If 23% of the bearings go through a hole of diameter 4.9 mm and 59% go through a hole of diameter 5.0 mm, what are the mean and standard deviation of the normal distribution? Assume the ball bearings are spherical. 
+
+    *Hint:* Let $X$ denote the diameter of a randomly selected ball bearing. Then $X \sim Norm(\mu, \sigma)$. You are given
+\begin{align*}
+P(X \leq 4.9) &= 0.23,\\
+P(X \leq 5.0) &= 0.59.
+\end{align*}
+
