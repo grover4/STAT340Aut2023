@@ -75,12 +75,12 @@ pvalue_df <- data.frame(
     Hints: Please see slide 15 from Chapter 10 for sample code. Also when using the `breaks` argument, set the witdth of the bins to 1/6 for uniformity of grading.
      
 3. A tool-and-die company makes castings for steel stress-monitoring gauges. Their annual profit $Q$ is a function of demand $X$, given by 
-    $$t(X) = 1 - exp (-2 X).$$
+    $$Q = 1 - exp (-2 X).$$
    
    Suppose the demand $X$ has the PDF
     $$f(x) = 6 e^{-6x} \ \ \  0 \leq x$$
   
-   Find $E\left[ t(X) \right]$. State any rules you use and show your work clearly. 
+   Find $E\left[ Q \right]$. State any rules you use and show your work clearly. 
     
 4. The diameters (in mm) of ball bearings from a particular company are normally distributed. In order to quickly determine the parameters of the normal distribution, one determines the proportion of ball bearings going through sieves with circular holes of different sizes. If 23% of the bearings go through a hole of diameter 4.9 mm and 59% go through a hole of diameter 5.0 mm, what are the mean and standard deviation of the normal distribution? Assume the ball bearings are spherical. 
 
